@@ -3,8 +3,8 @@ package com.evaluation.evaluationSystem.model;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "users")
-public class User {
+@Table(name = "employees")
+public class Employee {
 
     public Long getId() {
         return id;
