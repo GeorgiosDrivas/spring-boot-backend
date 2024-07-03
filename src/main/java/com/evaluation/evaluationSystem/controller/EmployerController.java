@@ -1,5 +1,6 @@
 package com.evaluation.evaluationSystem.controller;
 
+import com.evaluation.evaluationSystem.model.Employee;
 import com.evaluation.evaluationSystem.model.Employer;
 import com.evaluation.evaluationSystem.service.EmployerService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,5 +27,10 @@ public class EmployerController {
     @PostMapping("/login")
     public Employer loginEmployer(@RequestBody Employer employer) {
         return employerService.loginUser(employer.getEmail(), employer.getPassword());
+    }
+
+    @PutMapping("/{employerId}/profile")
+    public Employer updateEmployeeProfile(@PathVariable Long employerId, @RequestBody Employer employer) {
+        return employerService.updateUserProfile(employerId, employer);
     }
 }

@@ -27,4 +27,9 @@ public class EmployeeController {
     public Employee loginEmployee(@RequestBody Employee employee) {
         return employeeService.loginUser(employee.getEmail(), employee.getPassword());
     }
+
+    @PutMapping("/{employeeId}/profile")
+    public Employee updateEmployeeProfile(@PathVariable Long employeeId, @RequestBody Employee employee) {
+        return employeeService.updateUserProfile(employeeId, employee);
+    }
 }

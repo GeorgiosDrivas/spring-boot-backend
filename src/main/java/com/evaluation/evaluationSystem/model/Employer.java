@@ -21,6 +21,15 @@ public class Employer {
     @Column(name = "password")
     private String password;
 
+    @Column(name = "companyName")
+    private String companyName;
+
+    @Column(name = "field")
+    private String field;
+
+    @Column(name = "location")
+    private String location;
+
     public void setId(Long id) {
         this.id = id;
     }
@@ -39,5 +48,29 @@ public class Employer {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public String getField() {
+        return field;
+    }
+
+    public void setField(String field) {
+        this.field = field;
+    }
+
+    public String getCompanyName() {
+        return companyName;
+    }
+
+    public void setCompanyName(String companyName) {
+        this.companyName = companyName;
     }
 }
