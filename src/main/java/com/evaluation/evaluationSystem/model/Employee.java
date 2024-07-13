@@ -1,6 +1,9 @@
 package com.evaluation.evaluationSystem.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 @Table(name = "employees")
@@ -26,11 +29,13 @@ public class Employee {
     @Column(name = "location")
     private String location;
 
+    @Column(name = "title")
+    private String title;
+
     @Column(name = "currentEmployer")
     private String currentEmployer;
 
     // Getters and setters
-
     public Long getId() {
         return id;
     }
@@ -41,6 +46,14 @@ public class Employee {
 
     public String getEmail() {
         return email;
+    }
+
+    public String getTitle(){
+        return title;
+    }
+
+    public void setTitle(String title){
+        this.title = title;
     }
 
     public void setEmail(String email) {
@@ -85,5 +98,18 @@ public class Employee {
 
     public void setCurrentEmployer(String currentEmployer) {
         this.currentEmployer = currentEmployer;
+    }
+
+    @OneToMany(mappedBy = "employee", cascade = CascadeType.ALL)
+    @JsonManagedReference
+    private List<Evaluation> evaluations;
+
+    // Getters and setters, including for evaluations
+    public List<Evaluation> getEvaluations() {
+        return evaluations;
+    }
+
+    public void setEvaluations(List<Evaluation> evaluations) {
+        this.evaluations = evaluations;
     }
 }
