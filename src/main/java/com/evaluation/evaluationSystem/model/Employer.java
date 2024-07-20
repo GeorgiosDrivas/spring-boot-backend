@@ -24,11 +24,22 @@ public class Employer {
     @Column(name = "companyName")
     private String companyName;
 
+    public String getProfileImagePath() {
+        return profileImagePath;
+    }
+
+    public void setProfileImagePath(String profileImagePath) {
+        this.profileImagePath = profileImagePath;
+    }
+
     @Column(name = "field")
     private String field;
 
     @Column(name = "location")
     private String location;
+
+    @Column(name = "profileImagePath")
+    private String profileImagePath;
 
     public void setId(Long id) {
         this.id = id;
