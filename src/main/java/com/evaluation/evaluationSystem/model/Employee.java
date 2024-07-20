@@ -35,6 +35,17 @@ public class Employee {
     @Column(name = "currentEmployer")
     private String currentEmployer;
 
+    @Column(name = "profileImagePath")
+    private String profileImagePath;
+
+    public String getProfileImagePath() {
+        return profileImagePath;
+    }
+
+    public void setProfileImagePath(String profileImagePath) {
+        this.profileImagePath = profileImagePath;
+    }
+
     // Getters and setters
     public Long getId() {
         return id;
