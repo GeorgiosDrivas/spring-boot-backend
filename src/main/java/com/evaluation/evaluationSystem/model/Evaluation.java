@@ -12,6 +12,24 @@ public class Evaluation {
     private String title;
     private String content;
     private String employerName;
+    private String employerProfileImage;
+    private int employerId;
+
+    public int getEmployerId() {
+        return employerId;
+    }
+
+    public void setEmployerId(int employerId) {
+        this.employerId = employerId;
+    }
+
+    public String getEmployerProfileImage() {
+        return employerProfileImage;
+    }
+
+    public void setEmployerProfileImage(String employerProfileImage) {
+        this.employerProfileImage = employerProfileImage;
+    }
 
     @ManyToOne
     @JoinColumn(name = "employeeId")
