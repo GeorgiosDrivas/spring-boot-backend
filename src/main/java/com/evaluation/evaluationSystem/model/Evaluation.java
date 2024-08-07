@@ -13,6 +13,7 @@ public class Evaluation {
     private String content;
     private String employerName;
     private String employerProfileImage;
+    private Integer rating;
     private int employerId;
 
     public int getEmployerId() {
@@ -46,6 +47,14 @@ public class Evaluation {
 
     public String getTitle() {
         return title;
+    }
+
+    public Integer getRating(){
+        return rating;
+    }
+
+    public void setRating(Integer rating){
+        this.rating = rating;
     }
 
     public String getEmployerName() {
