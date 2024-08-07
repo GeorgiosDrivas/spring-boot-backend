@@ -87,7 +87,7 @@ public class EmployeeService {
         evaluation.setEmployerProfileImage(evaluationData.getEmployerProfileImage());
         evaluation.setEmployerId(evaluationData.getEmployerId());
         evaluation.setEmployee(existingEmployee);
-
+        evaluation.setRating(evaluationData.getRating());
         return evaluationRepository.save(evaluation);
     }
 
